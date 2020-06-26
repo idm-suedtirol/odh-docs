@@ -1,12 +1,15 @@
 
-The architecture of the Open Data Hub is depicted in
-:numref:`arch-odh`, which shows its composing elements together with
-its main goal: To gather data from :strong:`Data Sources` and make
-them available to :strong:`Data Consumers`, which are usually
-third-party applications that use those data in any way that they deem
-useful, including (but not limited to) study the evolution of
-historical data, or carry out data analysis to produce
+This section describes the architecture of the Open Data Hub,
+depicted in :numref:`arch-odh`, which shows its composing elements
+together with its main goal: To gather data from :strong:`Data
+Sources` and make them available to :strong:`Data Consumers`, which
+are usually third-party applications that use those data in any way
+that they deem useful, including (but not limited to) study the
+evolution of historical data, or carry out data analysis to produce
 :term:`Statistical Graphics`.
+
+.. versionadded:: 2020-April API v2 have been introduced, which
+   modify also the architecture.
 
 .. _arch-odh:
 
@@ -17,7 +20,7 @@ historical data, or carry out data analysis to produce
    formats used (bottom) during each data transformation.
 
 
-At the core of the Open Data Hub lays :strong:`bdp-core`, a java
+At the core of the Open Data Hub lays :strong:`odh-core`, a java
 application which contains all the business logic and handles all the
 connections with the underling database using the :abbr:`DAL (Data
 Access Layer)`. The Open Data Hub Core is composed by different
@@ -43,6 +46,30 @@ converted into JSON as DTOs. They are then transmitted to the Writer,
 who converts them and stores them in the Database using SQL. To expose
 data, the Reader queries the DB using SQL, transforms them in JSON's
 DTOs to the Web Services who serve the JSON to the Data Consumers.
+
+Open Data Hub Architecture v2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. versionadded:: 2020-April
+
+With the introduction of the new :ref:`ninja API v2 <ninja api>`, most
+of the concepts mentioned in the previous section retain their
+validity, while the architecture is slightly simplified. Indeed, the
+:strong:`Reader` and the :strong:`Web Services` are replaced by a new
+interface, called :strong:`ninja API`, that extracts data from the
+Database in order to answer to the requests of the Data Consumers.
+
+The new architecture and the new API v2 are immediately available for
+the Mobility domain `only`; the previous API is still valid for the
+Tourism domain, but deprecated for the Mobility domain. This is
+summarised in the table below.
+
+=== ============  =============
+API  Tourism      Mobility
+=== ============  =============
+v1   Recommended   Deprecated
+v2   --            Recommended
+=== ============  =============
 
 
 The Elements of the Open Data Hub in Details
@@ -107,7 +134,7 @@ Writer
    and therefore implements all methods needed to read the DTO's
    :term:`JSON` format and to write to the database using SQL.
 
-.. _bdp-def:
+.. _odhcore-def:
 
 ODH Core
    The Open Data Hub Core lays at the very core of the Open Data
@@ -149,6 +176,19 @@ Web Services
    make them available to Data Consumers by exposing APIs and REST
    endpoints. They transform the DTO they get into JSON.
 
+.. _ninja-def:
+
+Ninja API
+   The Ninja API is the evolution of the common API that was used for
+   both Tourism and Mobility domain. It is a completely new component
+   that, `in the Mobility domain only`, replaces both the Reader and
+   the Web Services and interacts with the Database and Data Consumer
+   without any mediators in-between. Ninja collects the queries coming
+   from the Data Consumer, retrieves data from the DB to answer them
+   and presents the answer to the Data Consumer directly.
+
+   .. versionadded:: 2020-April 
+   
 .. _data-consumer-def:
    
 Data Consumers
