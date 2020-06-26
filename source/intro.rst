@@ -5,11 +5,11 @@
  Introduction
 ==============
 
-This is the website of the |ODH| documentation, a collection of
-technical resources about the |odh| project. The website serves as the
-main resource portal for everyone interested in accessing the data or
-deploying apps based on :term:`datasets <Dataset>` & :term:`API`\s
-provided by the |odh| team.
+This is the website of the Open Data Hub documentation, a collection
+of technical resources about the Open Data Hub project. The website
+serves as the main resource portal for everyone interested in
+accessing the data or deploying apps based on :term:`datasets
+<Dataset>` & :term:`API`\s provided by the Open Data Hub team.
 
 The technical stuff is composed of:
 
@@ -18,23 +18,23 @@ The technical stuff is composed of:
 * Links to the full API documentation.
 * Resources for developers.
   
-For non-technical information about the |odh| project, please point 
-your browser to https://opendatahub.bz.it/.
+For non-technical information about the Open Data Hub project, please
+point your browser to https://opendatahub.bz.it/.
 
 .. _project-overview:
 
 Project Overview
 ================
 
-The |odh| project envisions the development and set up of a portal
-whose primary purpose is to offer a single access point to all (Open)
-Data from the region of South Tyrol, Italy, that are relevant for the
-economy sector and its actors.
+The Open Data Hub project envisions the development and set up of a
+portal whose primary purpose is to offer a single access point to all
+(Open) Data from the region of South Tyrol, Italy, that are relevant
+for the economy sector and its actors.
 
 The availability of Open Data from a single source will allow
 everybody to utilise the Data in several ways:
 
-* Digital communication channels. Data are retrieved from the |odh|
+* Digital communication channels. Data are retrieved from the Open Data Hub
   and used to provide informative services, like newsletters
   containing weather forecasting, or used in hotels to promote events
   taking place in the surroundings, along with additional information
@@ -42,38 +42,38 @@ everybody to utilise the Data in several ways:
   so on and so forth.
 * Applications for any devices, built on top of the data, that can be
   either a :abbr:`PoC (Proof of Concept)` to explore new means or new
-  fields in which to use |odh| data, or novel and innovative services
+  fields in which to use Open Data Hub data, or novel and innovative services
   or software products built on top of the data.
-* Internet portals and websites. Data are retrieved from the |odh| and
+* Internet portals and websites. Data are retrieved from the Open Data Hub and
   visualised within graphical charts, graphs, or maps.
 
-There are many services and software that rely on |odh|\'s Data, which
-are listed in the :ref:`applist` section, grouped according to their
-maturity: production stage, beta and alpha stage.
+There are many services and software that rely on Open Data Hub's
+Data, which are listed in the :ref:`applist` section, grouped
+according to their maturity: production stage, beta and alpha stage.
 
 .. _domains-diagram:
 
 .. figure:: /images/domain.png
    :width: 99%
 
-   An overview of the |odh| Project.
+   An overview of the Open Data Hub Project.
 
 :numref:`domains-diagram` gives a high level overview of the flow of
-data within the |odh|\: at the bottom, :term:`sensors <Sensor>` gather
-data from various domains, which are fed to the |odh| Big Data
-infrastructure and made available through endpoints to (third-party)
-applications, web sites, and vocal assistants. A more technical and
-in-depth overview can be found in next section,
+data within the Open Data Hub: at the bottom, :term:`sensors <Sensor>`
+gather data from various domains, which are fed to the Open Data Hub
+Big Data infrastructure and made available through endpoints to
+(third-party) applications, web sites, and vocal assistants. A more
+technical and in-depth overview can be found in next section,
 :ref:`architecture-odh`.
 	
-All the data within the |odh| will be easily accessible, preferring
-open interfaces and APIs which are built on existing standards like
-`The Open Travel Alliance <https://opentravel.org/>`_ (OTA), `The
-General Transit Feed Specification <https://gtfs.org/>`_ (GTFS),
-`Alpinebits <https://www.alpinebits.org/>`_.
+All the data within the Open Data Hub will be easily accessible,
+preferring open interfaces and APIs which are built on existing
+standards like `The Open Travel Alliance <https://opentravel.org/>`_
+(OTA), `The General Transit Feed Specification <https://gtfs.org/>`_
+(GTFS), `Alpinebits <https://www.alpinebits.org/>`_.
 
-The |odh| team also strives to keep all data regularly updated, and
-use standard exchange formats for them like `Json
+The Open Data Hub team also strives to keep all data regularly
+updated, and use standard exchange formats for them like `Json
 <http://www.json.org/>`_ and the `Data Catalog Vocabulary
 <https://www.w3.org/TR/vocab-dcat/>`_ (DCAT) to facilitate their
 spreading and use. Depending on the development of the project and the
@@ -82,8 +82,8 @@ in the future.
 
 .. _architecture-odh:
 
-|ODH| Architecture
-------------------
+Open Data Hub Architecture
+--------------------------
 
 .. include:: /architecture.rst
 
